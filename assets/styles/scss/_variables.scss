@@ -1,0 +1,50 @@
+// LAYOUT
+$layout-mobile: 375px;
+$layout-desktop: 1440px;
+
+// BREAKPOINTS - based on avaliable breakpoints by Bootstrap (https://getbootstrap.com/docs/5.3/layout/breakpoints/#available-breakpoints)
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-x-large: 1200px;
+$breakpoint-x-x-large: $layout-desktop;
+
+// COLORS
+// Primary
+$color-dark-blue: hsl(233, 26%, 24%);
+$color-lime-green: hsl(136, 65%, 51%);
+$color-bright-cyan: hsl(192, 70%, 51%);
+
+$gradient-theme: linear-gradient(45deg, $color-lime-green, $color-bright-cyan);
+$gradient-overlay: linear-gradient(hsla(233, 26%, 24%, 0.8), hsla(233, 26%, 24%, 0));
+
+// Neutral
+$color-grayish-blue: hsl(233, 8%, 62%);
+$color-light-grayish-blue: hsl(220, 16%, 96%);
+$color-very-light-gray: hsl(0, 0%, 98%);
+$color-white: hsl(0, 0%, 100%);
+
+// TYPOGRAPHY
+// Body Copy
+$font-size-default: 1rem;
+
+// Font
+$font-public-sans: "Public Sans", sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// CONTAINER
+$container-max-width-default: 1120px;
+$container-padding-y: 0;
+$container-padding-x: 20px;
+
+// BORDER RADIUS
+$radius-default: 10px;
+$radius-pill: 100px;
+
+// TRANSITIONS AND ANIMATIONS
+$transition-duration-default: 0.3s;
+
+// BROWSER CORES
+$browser-core-default: ("moz", "webkit");

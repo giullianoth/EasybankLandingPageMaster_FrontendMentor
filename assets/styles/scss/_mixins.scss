@@ -1,0 +1,167 @@
+// THEME
+@mixin theme() {
+    .easy- {
+        @content;
+    }
+}
+
+// CONTAINER
+@mixin containerFluid($fillScreen: false) {
+    width: 100%;
+
+    @if $fillScreen == true {
+        height: 100%;
+    }
+}
+
+@mixin container($maxWidth: $container-max-width-default, $paddingY: $container-padding-y, $paddingX: $container-padding-x) {
+    max-width: $maxWidth;
+    padding: $paddingY $paddingX;
+    margin: 0 auto;
+}
+
+@mixin sectionSpacing1($spacing: 60px) {
+    margin-block: $spacing;
+}
+
+@mixin sectionSpacing2($spacing: 60px) {
+    padding-block: $spacing;
+}
+
+// BROWSER CORE ATTRIBUTES
+@mixin setBrowserCores($attr, $value, $cores: $browser-core-default) {
+    #{$attr}: #{$value};
+
+    @each $core in $cores {
+        -#{$core}-#{$attr}: #{$value};
+    }
+}
+
+// BORDER RADIUS
+@mixin borderRadius($radius: $radius-default) {
+    @include setBrowserCores(border-radius, $radius);
+}
+
+@mixin pill($radius: $radius-pill) {
+    @include borderRadius($radius);
+}
+
+@mixin rounded() {
+    @include borderRadius(100%);
+}
+
+// FLEXBOX
+@mixin flex($justifyContent: center, $alignItems: center, $flexWrap: wrap) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-wrap: $flexWrap;
+}
+
+@mixin flexBasis($basis, $gap: 0) {
+    @if $gap !=0 {
+        flex-basis: calc($basis - $gap);
+    }
+
+    @else {
+        flex-basis: $basis;
+    }
+}
+
+@mixin flex1($gap: 0) {
+    @include flexBasis(100%, $gap);
+}
+
+@mixin flex2($gap: 0) {
+    @include flexBasis(calc(100% / 2), calc($gap - ($gap / 2)));
+}
+
+@mixin flex3($gap: 0) {
+    @include flexBasis(calc(100% / 3), calc($gap - ($gap / 3)));
+}
+
+@mixin flex4($gap: 0) {
+    @include flexBasis(calc(100% / 4), calc($gap - ($gap / 4)));
+}
+
+@mixin flex5($gap: 0) {
+    @include flexBasis(calc(100% / 5), calc($gap - ($gap / 5)));
+}
+
+@mixin column() {
+    flex-direction: column;
+}
+
+@mixin columnReverse() {
+    flex-direction: row-reverse;
+}
+
+@mixin rowReverse() {
+    flex-direction: row-reverse;
+}
+
+// POSITION
+@mixin relative() {
+    position: relative;
+}
+
+@mixin absolute($top: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+@mixin absoluteFull($top: 0, $left: 0, $fillScreen: false) {
+    @include absolute($top, $left);
+    @include containerFluid($fillScreen);
+}
+
+@mixin fixed($top: 0, $left: 0) {
+    position: fixed;
+    top: $top;
+    left: $left;
+}
+
+// BACKGROUND IMAGE
+@mixin backgroundImage($image: "", $repeat: no-repeat, $size: cover, $position: center center) {
+    $path: "../../../assets/images";
+
+    @if $image != "" {
+        background-image: url("#{$path}/#{$image}");
+    }
+
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
+}
+
+// BOX SHADOW
+@mixin shaded() {
+    box-shadow: 0 1px 8px rgba($color: #000000, $alpha: 0.15);
+}
+
+// TRANSITION
+@mixin transition($property: all, $duration: $transition-duration-default, $timingFunction: ease, $delay: 0s) {
+    transition: $property $duration $timingFunction $delay;
+}
+
+// RESPONSIVE DESIGN
+@mixin setResponsiveDesign($screenWidth, $isMaxWidth: false) {    
+    
+    @if $isMaxWidth == true {
+        @media screen and (max-width: $screenWidth) {
+            @content;
+        }
+    }
+    
+    @else if $isMaxWidth == false {
+        $minWidth: calc($screenWidth - 1px);
+        @media screen and (min-width: $minWidth) {
+            @content;
+        }
+    }
+
+    @else {
+        @debug "Invalid value '#{$isMaxWidth}' for isMaxWidth. Enter 'true' or 'false'.";
+    }
+}

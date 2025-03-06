@@ -1,30 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Easybank landing page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="assets/styles/css/style.min.css">
 </head>
 <body>
+  <header class="easy-header">
+    <div class="easy-header__container">
+      <div class="easy-header__logo">
+        <h1>Easybank</h1>
+        <a href="#">
+          <img src="assets/images/logo.svg" alt="Easybank logo">
+        </a>
+      </div>
 
-  Home
-  About
-  Contact
-  Blog
-  Careers
+      <nav class="easy-header__navigation">
+        <div class="easy-header__navigation-icon j_menu_icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="11">
+            <g fill="#2D314D" fill-rule="evenodd">
+              <path d="M0 0h24v1H0zM0 5h24v1H0zM0 10h24v1H0z" />
+            </g>
+          </svg>
+        </div>
 
-  Request Invite
+        <div class="easy-header__navigation-overlay j_menu_overlay">
+          <ul class="easy-header__menu j_mobile_menu">
+            <li class="easy-header__menu-item">
+              <a href="#">Home</a>
+            </li>
 
+            <li class="easy-header__menu-item">
+              <a href="#">About</a>
+            </li>
 
+            <li class="easy-header__menu-item">
+              <a href="#">Contact</a>
+            </li>
+
+            <li class="easy-header__menu-item">
+              <a href="#">Blog</a>
+            </li>
+
+            <li class="easy-header__menu-item">
+              <a href="#">Careers</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="easy-header__cta">
+        <a href="#" class="easy-button">Request Invite</a>
+      </div>
+    </div>
+  </header>
+
+  <main></main>
+
+  <footer></footer>
 
   Next generation digital banking
 
@@ -97,5 +135,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script type="module" src="assets/scripts/script.js"></script>
 </body>
 </html>

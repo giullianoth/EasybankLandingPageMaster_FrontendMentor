@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    @include setBrowserCores(box-sizing, border-box);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-public-sans;
+    font-size: $font-size-default;
+    color: $color-grayish-blue;
+    background-color: $color-very-light-gray;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $font-weight-regular;
+    color: $color-dark-blue;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    line-height: 1.6;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+@include theme() {
+    &button {
+        display: inline-block;
+        border: none;
+        background-image: $gradient-theme;
+        padding: 12px 24px;
+        text-align: center;
+        font-weight: $font-weight-bold;
+        color: $color-white;
+        cursor: pointer;
+        @include pill;
+        @include transition;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}

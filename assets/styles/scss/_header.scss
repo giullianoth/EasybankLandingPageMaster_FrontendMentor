@@ -1,0 +1,128 @@
+/* HEADER STYLE */
+@include theme() {
+    &header {
+        @include containerFluid;
+        @include shaded;
+        @include fixed;
+        background-color: $color-white;
+        z-index: 10;
+
+        &__container {
+            @include container;
+            @include flex(space-between, center, nowrap);
+            padding-block: 20px;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                padding-block: 0;
+            }
+        }
+
+        &__logo {
+            h1 {
+                display: none;
+            }
+        }
+
+        &__navigation {
+            &-icon {
+                cursor: pointer;
+
+                @include setResponsiveDesign($breakpoint-large) {
+                    display: none;
+                }
+            }
+
+            &-overlay {
+                @include fixed;
+                @include containerFluid(true);
+                background-image: $gradient-overlay;
+                margin-top: 60px;
+                padding-inline: 20px;
+                @include flex(flex-end, flex-start);
+                display: none;
+
+                @include setResponsiveDesign($breakpoint-large) {
+                    position: static;
+                    background: none;
+                    margin: 0;
+                    padding: 0;
+                    display: block !important;
+                }
+            }
+        }
+
+        &__menu {
+            width: 100%;
+            max-width: 460px;
+            background-color: $color-white;
+            margin-top: 20px;
+            padding-block: 40px;
+            @include borderRadius;
+
+            @include flex(center, center);
+            flex-direction: column;
+
+            font-size: 1.3em;
+            display: none;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                background: none;
+                margin: 0;
+                padding: 0;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                column-gap: 14px;
+                font-size: $font-size-default;
+                display: flex !important;
+            }
+
+            @include setResponsiveDesign($breakpoint-x-large) {
+                column-gap: 34px;
+            }
+
+            &-item {
+                padding-block: 14px;
+                border-left: 5px solid transparent;
+                width: 100%;
+                text-align: center;
+                @include transition;
+
+                @include setResponsiveDesign($breakpoint-large) {
+                    padding-block: 0;
+                    border-left: none;
+                    border-bottom: 5px solid transparent;
+                }
+
+                &:has(> a:hover) {
+                    border-left-color: $color-lime-green;
+
+                    @include setResponsiveDesign($breakpoint-large) {
+                        border-left-color: none;
+                        border-bottom-color: $color-lime-green;
+                    }
+
+                    a {
+                        color: $color-dark-blue;
+                    }
+                }
+
+                a {
+                    color: $color-grayish-blue;
+                    display: inline-block;
+
+                    @include setResponsiveDesign($breakpoint-large) {
+                        padding-block: 26px;
+                    }
+                }
+            }
+        }
+
+        &__cta {
+            display: none;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                display: block;
+            }
+        }
+    }
+}
