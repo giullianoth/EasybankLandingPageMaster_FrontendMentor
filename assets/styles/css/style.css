@@ -503,3 +503,104 @@ img {
 .easy-blog__article-description {
   font-size: 0.8;
 }
+
+.easy-footer {
+  width: 100%;
+  margin-top: 60px;
+  padding-top: 40px;
+  background-color: hsl(233, 26%, 24%);
+  color: hsl(0, 0%, 100%);
+}
+.easy-footer__container {
+  max-width: 1120px;
+  padding: 0 20px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 40px;
+}
+.easy-footer__logo {
+  flex-basis: 100%;
+}
+@media screen and (min-width: 991px) {
+  .easy-footer__logo {
+    flex-basis: 25%;
+    text-align: left;
+  }
+}
+.easy-footer__logo-link {
+  display: inline-block;
+  margin-inline: auto;
+  margin-bottom: 40px;
+}
+.easy-footer__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+@media screen and (min-width: 991px) {
+  .easy-footer__social {
+    justify-content: flex-start;
+  }
+}
+.easy-footer__navigation {
+  flex-basis: 100%;
+}
+@media screen and (min-width: 991px) {
+  .easy-footer__navigation {
+    flex-basis: 50%;
+  }
+}
+.easy-footer__navigation-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  row-gap: 20px;
+}
+@media screen and (min-width: 991px) {
+  .easy-footer__navigation-list {
+    flex-direction: row;
+    align-items: stretch;
+    text-align: left;
+  }
+}
+.easy-footer__navigation-link {
+  flex-basis: 50%;
+}
+.easy-footer__navigation-link a {
+  transition: all 0.3s ease 0s;
+}
+.easy-footer__navigation-link a:hover {
+  color: hsl(136, 65%, 51%);
+}
+.easy-footer__cta {
+  flex-basis: 100%;
+}
+@media screen and (min-width: 991px) {
+  .easy-footer__cta {
+    flex-basis: 25%;
+    text-align: right;
+  }
+}
+.easy-footer__cta .easy-button {
+  margin-bottom: 30px;
+}
+.easy-footer__rights {
+  color: hsl(233, 8%, 62%);
+}
+.easy-footer__attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-bottom: 10px;
+  flex-basis: 100%;
+}
+.easy-footer__attribution a {
+  color: hsl(136, 65%, 51%);
+}

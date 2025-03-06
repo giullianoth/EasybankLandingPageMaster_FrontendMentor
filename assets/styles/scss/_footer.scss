@@ -1,0 +1,100 @@
+@include theme() {
+    &footer {
+        @include containerFluid;
+        margin-top: 60px;
+        padding-top: 40px;
+        background-color: $color-dark-blue;
+        color: $color-white;
+
+        &__container {
+            @include container;
+            text-align: center;
+            @include flex(flex-start);
+            row-gap: 40px;
+        }
+
+        &__logo {
+            @include flex1;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                @include flex4;
+                text-align: left;
+            }
+
+            &-link {
+                display: inline-block;
+                margin-inline: auto;
+                margin-bottom: 40px;
+            }
+        }
+
+        &__social {
+            @include flex;
+            gap: 16px;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                justify-content: flex-start;
+            }
+        }
+
+        &__navigation {
+            @include flex1;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                @include flex2;
+            }
+
+            &-list {
+                @include flex;
+                @include column;
+                row-gap: 20px;
+
+                @include setResponsiveDesign($breakpoint-large) {
+                    flex-direction: row;
+                    align-items: stretch;
+                    text-align: left;
+                }
+            }
+
+            &-link {
+                @include flex2;
+
+                a {
+                    @include transition;
+
+                    &:hover {
+                        color: $color-lime-green;
+                    }
+                }
+            }
+        }
+
+        &__cta {
+            @include flex1;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                @include flex4;
+                text-align: right;
+            }
+
+            .easy-button {
+                margin-bottom: 30px;
+            }
+        }
+
+        &__rights {
+            color: $color-grayish-blue;
+        }
+
+        &__attribution {
+            font-size: 11px;
+            text-align: center;
+            padding-bottom: 10px;
+            @include flex1;
+
+            a {
+                color: $color-lime-green;
+            }
+        }
+    }
+}
