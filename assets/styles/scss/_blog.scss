@@ -1,0 +1,92 @@
+/* BLOG SECTION */
+@include theme() {
+    &blog {
+        @include containerFluid;
+        @include sectionSpacing1;
+        font-size: 0.9em;
+
+        &__container {
+            @include container;
+        }
+
+        &__title {
+            margin-bottom: 30px;
+            text-align: center;
+
+            @include setResponsiveDesign($breakpoint-large) {
+                text-align: left
+            }
+
+            h1 {
+                font-size: 2.4em;
+            }
+        }
+
+        &__list {
+            @include flex(flex-start, stretch);
+            gap: 40px;
+
+            @include setResponsiveDesign($breakpoint-medium) {
+                gap: 20px;
+            }
+        }
+
+        &__article {
+            @include flex1;
+            @include shaded;
+            @include borderRadius;
+            @include container(480px, 0, 0);
+            overflow: hidden;
+
+            @include setResponsiveDesign($breakpoint-medium) {
+                max-width: none;
+                @include flex2(20px);
+            }
+
+            @include setResponsiveDesign($breakpoint-x-large) {
+                @include flex4(20px);
+            }
+
+            &-cover {
+                img {
+                    @include containerFluid;
+                    height: 300px;
+
+                    @include setResponsiveDesign($breakpoint-x-large) {
+                        height: 200px;
+                    }
+                }
+            }
+
+            &-info {
+                padding: 30px;
+
+                @include setResponsiveDesign($breakpoint-medium) {
+                    padding: 20px;
+                }
+            }
+
+            &-author {
+                margin-bottom: 20px;
+                font-size: 0.7em;
+            }
+
+            &-title {
+                margin-bottom: 20px;
+                font-size: 0.9em;
+
+                a {
+                    @include transition;
+                    
+                    &:hover {
+                        color: $color-lime-green;
+                    }
+                }
+            }
+
+            &-description {
+                font-size: 0.8;
+            }
+        }
+    }
+}
